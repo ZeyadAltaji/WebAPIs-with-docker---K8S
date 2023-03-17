@@ -57,6 +57,7 @@ namespace PlatformService
             {
                 endpoints.MapControllers();
             });
+            PreoDB.PrepPopulation(app);
         }
     }
 }
