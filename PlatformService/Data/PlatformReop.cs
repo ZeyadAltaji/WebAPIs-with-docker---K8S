@@ -12,7 +12,7 @@ namespace PlatformService.Data
         {
             Dc =dc;
         }
-        public void CreatePlatForms(platform plat)
+        public void CreatePlatForms(Platform plat)
         {
             if(plat ==null)
             {
@@ -21,12 +21,12 @@ namespace PlatformService.Data
             Dc.Platforms.Add(plat);
         }
 
-        public IEnumerable<platform> GetAllPlatforms()
+        public IEnumerable<Platform> GetAllPlatforms()
         {
             return Dc.Platforms.ToList();
         }
 
-        public platform GetPlatFormsById(int id)
+        public Platform GetPlatFormsById(int id)
         {
             return Dc.Platforms.FirstOrDefault(p => p.Id==id);
         }

@@ -5,9 +5,9 @@ namespace PlatformService.Data
     public interface IPlatformReop
     {
         bool SaveChanges();
-        IEnumerable<platform>GetAllPlatforms() ;
-        platform GetPlatFormsById(int id);
-        void CreatePlatForms(platform plat);
+        IEnumerable<Platform>GetAllPlatforms() ;
+        Platform GetPlatFormsById(int id);
+        void CreatePlatForms(Platform plat);
 
     }
 }
