@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\backend\\webapis\\PlatformService\\PlatformService.csproj": {}
+    "D:\\backend\\WebAPIs\\PlatformService\\PlatformService.csproj": {}
   },
   "projects": {
-    "D:\\backend\\webapis\\PlatformService\\PlatformService.csproj": {
+    "D:\\backend\\WebAPIs\\PlatformService\\PlatformService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\backend\\webapis\\PlatformService\\PlatformService.csproj",
+        "projectUniqueName": "D:\\backend\\WebAPIs\\PlatformService\\PlatformService.csproj",
         "projectName": "PlatformService",
-        "projectPath": "D:\\backend\\webapis\\PlatformService\\PlatformService.csproj",
+        "projectPath": "D:\\backend\\WebAPIs\\PlatformService\\PlatformService.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "D:\\backend\\webapis\\PlatformService\\obj\\",
+        "outputPath": "D:\\backend\\WebAPIs\\PlatformService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,34 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
