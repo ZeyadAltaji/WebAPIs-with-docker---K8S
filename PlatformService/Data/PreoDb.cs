@@ -43,6 +43,7 @@ namespace PlatformService.Data
                         Cost="Free"
                     }
                 );
+                DC.SaveChanges();
             }
             else
             {
