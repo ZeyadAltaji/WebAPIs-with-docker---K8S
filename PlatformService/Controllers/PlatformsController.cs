@@ -43,20 +43,24 @@ namespace PlatformService.Controllers
             return NotFound();
         }
         [HttpPost]
-        public async Task<ActionResult<PlatformReadDto>>CreatePlatforms(PlatformCreateDto platformCreateDto)
+        public async Task<ActionResult<PlatformReadDto>> CreatePlatform(PlatformCreateDto platformCreateDto)
         {
-            var platfromModel =_mapper.Map<Platform>(platformCreateDto);
-            _repo.CreatePlatForms(platfromModel);
+            var platformModel = _mapper.Map<Platform>(platformCreateDto);
+            _repo.CreatePlatForms(platformModel);
             _repo.SaveChanges();
-            var PlatformReadDTO =_mapper.Map<PlatformReadDto>(platfromModel);
-            try{
-                await _commandDataClient.SendPlatformToCommand(PlatformReadDTO);
 
-            }catch(Exception ex){
-                Console.WriteLine($"--> Could not send synchronously: {ex.Message}");
+            var platformReadDto = _mapper.Map<PlatformReadDto>(platformModel);
 
+            // Send Sync Message
+            try
+            {
+                await _commandDataClient.SendPlatformToCommand(platformReadDto);
             }
-            return CreatedAtAction(nameof(GetPlatFormsById),new {Id =PlatformReadDTO.Id},PlatformReadDTO);
+            catch(Exception ex)
+            {
+                Console.WriteLine($"--> Could not send synchronously: {ex.Message}");
+            }
+            return CreatedAtAction(nameof(GetPlatFormsById),new {Id =platformReadDto.Id},platformReadDto);
 
         }
     }
