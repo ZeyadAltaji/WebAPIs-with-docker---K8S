@@ -21,6 +21,12 @@ namespace PlatformService.Data
             Dc.Platforms.Add(plat);
         }
 
+        public void DeletePlatForm(int id)
+        {
+           var platformDelete = Dc.Platforms.Find(id);
+           Dc.Platforms.Remove(platformDelete);
+        }
+
         public IEnumerable<Platform> GetAllPlatforms()
         {
             return Dc.Platforms.ToList();
