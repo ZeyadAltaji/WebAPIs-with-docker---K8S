@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PlatformService.Data;
+using PlatformService.SyncDataServices.Http;
 
 namespace PlatformService
 {
@@ -31,7 +32,7 @@ namespace PlatformService
             services.AddDbContext<AppDBContext>(option=>option.UseInMemoryDatabase("InMemory"));
             services.AddScoped<IPlatformReop,PlatformReop>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddControllers();
+            services.AddHttpClient<ICommandDataClient,HttpCommandDataClient>();            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlatformService", Version = "v1" });
