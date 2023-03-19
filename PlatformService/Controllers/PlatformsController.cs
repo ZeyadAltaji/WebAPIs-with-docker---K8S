@@ -51,7 +51,7 @@ namespace PlatformService.Controllers
 
             var platformReadDto = _mapper.Map<PlatformReadDto>(platformModel);
 
-            // Send Sync Message
+            // Send Sync Message   4:18:18
             try
             {
                 await _commandDataClient.SendPlatformToCommand(platformReadDto);
