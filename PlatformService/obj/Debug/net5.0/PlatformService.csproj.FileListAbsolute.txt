@@ -70,3 +70,4 @@ D:\backend\WebAPIs\PlatformService\obj\Debug\net5.0\refint\PlatformService.dll
 D:\backend\WebAPIs\PlatformService\obj\Debug\net5.0\PlatformService.pdb
 D:\backend\WebAPIs\PlatformService\obj\Debug\net5.0\PlatformService.genruntimeconfig.cache
 D:\backend\WebAPIs\PlatformService\obj\Debug\net5.0\ref\PlatformService.dll
+D:\backend\WebAPIs\PlatformService\bin\Debug\net5.0\appsettings.Production.json
