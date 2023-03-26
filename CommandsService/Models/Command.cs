@@ -14,5 +14,6 @@ namespace CommandsService.Models
         [Required]
         public int PlatFromsId { get; set; }
         public PlatFroms platFroms{get;set;}
+        public object PlatFroms { get; internal set; }
     }
 }
