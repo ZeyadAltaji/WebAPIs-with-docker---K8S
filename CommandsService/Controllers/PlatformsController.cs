@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using AutoMapper;
 using CommandsService.Data;
+using CommandsService.DTOs;
 using Microsoft.AspNetCore.Mvc;
  namespace CommandsService.Controllers
 {
@@ -16,6 +18,16 @@ using Microsoft.AspNetCore.Mvc;
                 this.mapper=mapper;
 
         }
+        [HttpGet]
+        public ActionResult<IEnumerable<PlatformReadDto>> GetPlatforms()
+        {
+             Console.WriteLine("--> Getting Platforms from CommandsService");
+
+            var platformItems = Repo.GetAllPlatFroms();
+
+            return Ok(mapper.Map<IEnumerable<PlatformReadDto>>(platformItems));
+        }
+
         [HttpPost]
         public ActionResult TestInboundConnection()
         {
