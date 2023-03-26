@@ -7,11 +7,11 @@ namespace CommandsService.Data
 {
     public class CommandRepo : ICommandRepo
     {
-        private readonly DBContext dc;
+        private readonly AppDbContext _dc;
 
-        public CommandRepo(DBContext dc)
+        public CommandRepo(AppDbContext dc)
         {
-            this.dc=dc;
+            _dc=dc;
             
         }
         public void CreateNewCommand(int platfromsId, Command command)
@@ -21,7 +21,7 @@ namespace CommandsService.Data
                 throw new ArgumentNullException(nameof(command));
              }
              command.PlatFromsId = platfromsId;
-             dc.commands.Add(command);
+             _dc.commands.Add(command);
         }
 
         public void CreateNewPlatFroms(PlatFroms plat)
@@ -30,23 +30,23 @@ namespace CommandsService.Data
            {
                 throw new ArgumentNullException(nameof(plat));
            }
-           dc.platfroms.Add(plat);
+           _dc.platfroms.Add(plat);
         }
 
         public IEnumerable<PlatFroms> GetAllPlatFroms()
         {
-          return dc.platfroms.ToList();
+          return _dc.platfroms.ToList();
         }
 
         public Command GetCommand(int platfromsId, int CommandId)
         {
-            return dc.commands.Where(
+            return _dc.commands.Where(
             c=>c.PlatFromsId==platfromsId && c.Id==CommandId).FirstOrDefault();
         }
 
         public IEnumerable<Command> GetCommandForPlatFroms(int platfromsId)
         {
-            return dc.commands.Where(
+            return _dc.commands.Where(
                 c=>c.PlatFromsId==platfromsId)
                 .OrderBy(c=>c.platFroms.Name);
          
@@ -54,12 +54,12 @@ namespace CommandsService.Data
 
         public bool platfromsExitAlready(int platfromsId)
         {
-            return dc.platfroms.Any(p=>p.Id==platfromsId);
+            return _dc.platfroms.Any(p=>p.Id==platfromsId);
         }
 
         public bool SaveChanges()
         {
-            return (dc.SaveChanges()>=0);
+            return (_dc.SaveChanges()>=0);
         }
     }
 }
