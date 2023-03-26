@@ -6,8 +6,8 @@ namespace CommandsService.Data
     public class DBContext : DbContext
     {
         public DBContext(DbContextOptions<DbContext>option):base(option){}
-        DbSet<Command>commands{get;set;}
-        DbSet<PlatFroms>platfroms{get;set;}
+        public DbSet<Command>commands{get;set;}
+        public DbSet<PlatFroms>platfroms{get;set;}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
                 modelBuilder
