@@ -6,5 +6,6 @@ namespace CommandsService.Models
         public string  HowTo { get; set; }
         public string CommandLine { get; set; }
         public int PlatFromsId { get; set; }
+        public PlatFroms platFroms{get;set;}
     }
 }
